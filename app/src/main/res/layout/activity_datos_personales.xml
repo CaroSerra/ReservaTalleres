@@ -1,19 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".DatosPersonalesActivity">
 
+
     <TextView
+        android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Reserva Talleres"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--            -->
+            <!--   Nombre   -->
+            <!--            -->
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_margin="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Nombre"
+                android:inputType="textPersonName"/>
+
+            <!--            -->
+            <!--   Correo   -->
+            <!--            -->
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_margin="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:gravity="top"
+                android:inputType="textEmailAddress"
+                android:hint="Correo" />
+
+            <!--            -->
+            <!--  Telefono  -->
+            <!--            -->
+
+            <EditText
+                android:layout_margin="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="no"
+                android:ems="10"
+                android:inputType="phone"
+                android:hint="Telefono" />
+
+            <!--                -->
+            <!-- Notificaciones -->
+            <!--                -->
+
+            <Switch
+                android:id="@+id/switchNotificaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recibir notificaciones"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <!--            -->
+            <!--  Talleres  -->
+            <!--            -->
+
+            <CheckBox
+                android:id="@+id/cbTalleres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deseo recibir información sobre próximos talleres."
+                android:textSize="16sp" />
+
+            <!--             -->
+            <!--    Botón    -->
+            <!--             -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnContinuar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Continuar"
+                        android:textSize="18sp"
+                        android:minHeight="54dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
