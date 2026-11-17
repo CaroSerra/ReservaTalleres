@@ -1,6 +1,7 @@
 package com.example.reservastalleres;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -52,6 +53,18 @@ public class ConfiguracionReservaActivity extends AppCompatActivity {
         btnAnterior = findViewById(R.id.btnAnterior);
         btnLimpiar = findViewById(R.id.btnLimpiar);
         btnRevisar = findViewById(R.id.btnRevisar);
+
+        // Spinner: carga las opciones de strings.xml
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.talleres_array,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spTaller.setAdapter(adapter);
+
+       // TimePicker en 24 horas
+        tpHora.setIs24HourView(true);
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

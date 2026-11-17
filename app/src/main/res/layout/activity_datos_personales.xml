@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main2"
+    android:id="@+id/llPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -63,6 +63,7 @@
             <!--            -->
 
             <EditText
+                android:id="@+id/etTelefono"
                 android:layout_margin="30sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,7 +77,7 @@
             <!--                -->
 
             <Switch
-                android:id="@+id/switchNotificaciones"
+                android:id="@+id/swNotificaciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Recibir notificaciones"
@@ -89,7 +90,7 @@
             <!--            -->
 
             <CheckBox
-                android:id="@+id/cbTalleres"
+                android:id="@+id/cbInformacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Deseo recibir información sobre próximos talleres."
@@ -105,6 +106,16 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
+                <Button
+                    android:id="@+id/btnLimpiar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="18sp"
+                    android:minHeight="54dp"
+                    android:text="Limpiar" />
+
                     <Button
                         android:id="@+id/btnContinuar"
                         android:layout_width="0dp"
@@ -113,6 +124,7 @@
                         android:text="Continuar"
                         android:textSize="18sp"
                         android:minHeight="54dp" />
+
             </LinearLayout>
 
         </LinearLayout>
