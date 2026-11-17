@@ -1,6 +1,8 @@
 package com.example.reservastalleres;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -54,6 +56,23 @@ public class ConfiguracionReservaActivity extends AppCompatActivity {
         btnLimpiar = findViewById(R.id.btnLimpiar);
         btnRevisar = findViewById(R.id.btnRevisar);
 
+        /* TODO
+            1. Botón Limpiar: añadir el listener y restablecer los controles.
+            (Spinner a la posición 0, RadioGroup sin selección, 3 CheckBox
+            desmarcados, plazas vacías...).
+
+            2. Botón Revisar: validar ANTES de abrir la Activity 3 (ahora mismo funciona
+            sin comprobar nada): el taller debe ser distinto de la posición 0, modalidad
+            seleccionada, plazas entre 1 y 10 (controlar campo vacío) y
+            condiciones aceptadas. Mostrar error y no continuar si falla.
+
+            3. Botón Revisar: guardar en SharedPreferences, al continuar, taller,
+            modalidad, material, certificado, plazas, fecha y hora.
+
+            4. Recuperar los datos guardados al volver a esta pantalla para conservar lo introducido,
+            también tras cerrar y reabrir la app.
+         */
+
         // Spinner: carga las opciones de strings.xml
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -66,6 +85,24 @@ public class ConfiguracionReservaActivity extends AppCompatActivity {
        // TimePicker en 24 horas
         tpHora.setIs24HourView(true);
 
+        // Botón Anterior: Vuelve a la activity de DatosPersonales
+        btnAnterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ConfiguracionReservaActivity.this, DatosPersonalesActivity.class);
+                startActivity(i);
+            }
+        });
+
+        // Botón Revisar: Va a la actividad de Resumen Reserva
+        // TODO pasar los datos seleccionados al SharedPreferences
+        btnRevisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ConfiguracionReservaActivity.this, ResumenReservaActivity.class);
+                startActivity(i);
+            }
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
