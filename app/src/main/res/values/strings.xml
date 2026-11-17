@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ReservasTalleres</string>
+
+    <string-array name="talleres_array">
+        <item>Selecciona un taller</item>
+        <item>Programación Android</item>
+        <item>Diseño gráfico</item>
+        <item>Fotografía</item>
+        <item>Robótica</item>
+    </string-array>
 </resources>
